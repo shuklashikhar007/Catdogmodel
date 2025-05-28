@@ -1,0 +1,5 @@
+bottle==0.13.3
+numpy==1.26.4
+pillow==11.1.0
+tensorflow==2.16.2
+bottle_cors_plugin==0.1.9
