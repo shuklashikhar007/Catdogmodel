@@ -2,6 +2,21 @@ import classNames from "classnames";
 import type { MouseEvent, DragEvent } from "preact/compat";
 import { useRef, useState } from "preact/hooks";
 
+function Bar({ color }: { color: boolean }) {
+	return (
+		<div className="w-44 absolute -rotate-12 flex flex-col justify-center items-center gap-1 -z-10">
+			{Array.from({ length: 12 }).map(() => (
+				<div
+					className={classNames(
+						"w-full h-1",
+						color ? "bg-green-300" : "bg-red-300"
+					)}
+				/>
+			))}
+		</div>
+	);
+}
+
 export function Home() {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [image, setImage] = useState<File | null>(null);
@@ -89,7 +104,7 @@ export function Home() {
 							<img
 								src={URL.createObjectURL(image)}
 								alt="image"
-								className="object-contain"
+								className="object-scale-down h-full w-full"
 							/>
 						</div>
 					) : (
@@ -142,14 +157,17 @@ export function Home() {
 					)}
 					onClick={handleSubmit}
 				>
-					{!loading && (
-						<div className="h-full w-1/2 flex justify-center items-center text-xs border-r border-gray-300 border-dashed">
-							Cat: {predection?.cat}%
+					{!loading && predection && (
+						<div className="h-full w-1/2 relative flex justify-center items-center text-xs sm:text-sm font-bold overflow-hidden border-r border-gray-300 border-dashed">
+							<Bar color={predection.cat > 50} />
+							Cat: {predection.cat}%
 						</div>
 					)}
-					{!loading && (
-						<div className="h-full w-1/2 flex justify-center items-center text-xs">
-							Dog: {predection?.dog}%
+
+					{!loading && predection && (
+						<div className="h-full w-1/2 relative flex justify-center items-center text-xs sm:text-sm font-bold overflow-hidden">
+							<Bar color={predection.dog > 50} />
+							Dog: {predection.dog}%
 						</div>
 					)}
 
