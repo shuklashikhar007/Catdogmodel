@@ -125,14 +125,14 @@ export default function Predictor() {
 				{!loading && predection && (
 					<div className="h-full w-1/2 relative flex justify-center items-center text-xs sm:text-sm font-bold overflow-hidden border-r border-gray-300 border-dashed">
 						<Bar color={predection.cat > 50} />
-						Cat: {predection.cat}%
+						Cat: {predection.cat.toFixed(2)}%
 					</div>
 				)}
 
 				{!loading && predection && (
 					<div className="h-full w-1/2 relative flex justify-center items-center text-xs sm:text-sm font-bold overflow-hidden">
 						<Bar color={predection.dog > 50} />
-						Dog: {predection.dog}%
+						Dog: {predection.dog.toFixed(2)}%
 					</div>
 				)}
 
