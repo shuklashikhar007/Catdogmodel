@@ -1,6 +1,25 @@
+@font-face {
+	font-family: Anonymous_Regular;
+	src: url("../src/assets/fonts/Anonymous_Pro/AnonymousPro-Regular.ttf");
+}
+
+@font-face {
+	font-family: Anonymous_Bold;
+	src: url("../src/assets/fonts/Anonymous_Pro/AnonymousPro-Bold.ttf");
+}
+
+@theme {
+	--font-anonymous: Anonymous_Regular, "sans-serif";
+	--font-anonymous-bold: Anonymous_Bold, "sans-serif";
+}
+
 @import "tailwindcss";
 
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body {
+	margin: 0;
+	padding: 0;
+
+	font-family: var(--font-anonymous);
+	letter-spacing: -0.025em;
 }
