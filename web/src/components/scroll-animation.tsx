@@ -3,25 +3,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "preact/hooks";
 import { cloneElement, type ComponentChildren } from "preact";
 
+import cat1 from "@/assets/images/cats/1.jpg";
+import cat2 from "@/assets/images/cats/2.jpg";
+import cat3 from "@/assets/images/cats/3.jpg";
+import cat4 from "@/assets/images/cats/4.jpg";
+import cat5 from "@/assets/images/cats/5.jpg";
+
+import dog1 from "@/assets/images/dogs/1.jpg";
+import dog2 from "@/assets/images/dogs/2.jpg";
+import dog3 from "@/assets/images/dogs/3.jpg";
+import dog4 from "@/assets/images/dogs/4.jpg";
+import dog5 from "@/assets/images/dogs/5.jpg";
+
 // register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
 // images of dogs, and cats for showcase
-const images = [
-	"../assets/images/cats/1.jpg",
-	"../assets/images/cats/3.jpg",
-	"../assets/images/dogs/3.jpg",
-	"../assets/images/cats/5.jpg",
-	"../assets/images/dogs/5.jpg",
-	"../assets/images/dogs/1.jpg",
-	"../assets/images/dogs/2.jpg",
-	"../assets/images/cats/2.jpg",
-	"../assets/images/dogs/4.jpg",
-	"../assets/images/cats/4.jpg",
-];
+const images = [cat1, dog1, cat2, dog2, cat3, dog3, cat4, dog4, cat5, dog5];
 
 /**
- * @description scroll animation with image, showcase 
+ * @description scroll animation with image, showcase
  * @param children component to show after animation os complete
  */
 export function ScrollAnimation({ children }: { children: ComponentChildren }) {
