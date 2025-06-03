@@ -1,5 +1,11 @@
 <h1 align="center">Cat Dog Classifier</h1>
 
+![Alternative text](./preview/example.gif)
+
+<h3 align="center">How it's made?</h3>
+
+---
+
 1. Cat-Dog classifier based on `pre-trained` model (MobileNet).
 2. This repo contains model prepration, backed, and web frontend code.
 3. You can test the model by visiting [cat-dog.tanishqsingh.com](https://cat-dog.tanishqsingh.com) and uploading a image.
@@ -7,8 +13,3 @@
 5. And the minimum instances is set to 0, so your first image may take some time as the server will `cold start`.
 6. To solve this, frontend make a `get` request to server as soon as someone vists the site, to start the server.
 
-<h2 align="center">Website</h2>
-
-<img src="./preview/home-page.png" alt="home-page.png"/>
-
-<img src="./preview/prediction-page.png" alt="prediction-page.png"/>
