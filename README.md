@@ -6,3 +6,9 @@
 4. Frontend is deployed in `vercel`, where as backend is dockerized and deployed to `google cloud run`.
 5. And the minimum instances is set to 0, so your first image may take some time as the server will `cold start`.
 6. To solve this, frontend make a `get` request to server as soon as someone vists the site, to start the server.
+
+<h2 align="center">Website</h2>
+
+<img src="./preview/home-page.png" alt="home-page.png"/>
+
+<img src="./preview/prediction-page.png" alt="prediction-page.png"/>
