@@ -127,7 +127,7 @@ export function ScrollAnimation({ children }: { children: ComponentChildren }) {
 
 			{/* branding */}
 			<a href="https://www.linkedin.com/in/oyetanishq" target="_blank" className="text-sm italic text-gray-800 underline underline-offset-3">
-				@oyetanishq
+				
 			</a>
 		</div>
 	);
