@@ -19,7 +19,7 @@ export default function Predictor() {
 		 * dude server do cold start, if it didn't tackle request for long
 		 * so it's better to hit before user name any request
 		 */
-		(async () => await fetch(`${import.meta.env.VITE_API_URL}`))();
+		(async () => await fetch(${import.meta.env.VITE_API_URL}))();
 	}, []);
 
 	/**
@@ -30,20 +30,18 @@ export default function Predictor() {
 		try {
 			setLoading(true);
 			setImage(file);
-
 			const formData = new FormData();
 			formData.append("image_file", file);
 
-			await fetch(`${import.meta.env.VITE_API_URL}/predict`, {
+			await fetch(${import.meta.env.VITE_API_URL}/predict, {
 				method: "POST",
 				body: formData,
 			})
 				.then((response) => response.json())
 				.then((data) => {
-					const cat = parseFloat(data.cat) * 100;
-					const dog = parseFloat(data.dog) * 100;
+					console.log(data);
 
-					setPredection({ cat, dog });
+					// setPredection({ cat, dog });
 				});
 		} catch (error) {
 			alert((error as Error).message);
